@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.one.two.dao.MemberMapper">
+
+<insert id="memberJoin" parameterType="member">
+insert into
+    memberinfo(
+	account_nm
+    ,email
+    ,password
+    ,nickname
+    ,birth
+    ,gender
+    ,tag
+    )values(
+    	account_nm_seq.nextval
+        ,#{email}
+        ,#{password}
+        ,#{nickname}
+        ,#{birth}
+        ,#{gender}
+        ,#{tag}
+    )
+</insert>
+
+<select id="selectOne" parameterType="String" resultType="member">
+	select
+		email
+		,password
+
+	from
+		memberinfo
+
+
+
+</select>
+
+
+</mapper>

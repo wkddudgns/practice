@@ -1,0 +1,30 @@
+CREATE TABLE memberInfo (
+	account_nm	NUMBER(6)		NOT NULL,
+	email	VARCHAR2(100)		NOT NULL,
+	password	VARCHAR2(20)		NOT NULL,
+	nickname	VARCHAR2(20)		NOT NULL,
+	birth	NUMBER(8)		NOT NULL,
+	gender	VARCHAR2(20)		NOT NULL,
+	phone	VARCHAR2(20)		NULL,
+	country	VARCHAR2(20)		NULL,
+	city	VARCHAR2(20)		NULL,
+	indate	DATE	DEFAULT SYSDATE	NULL,
+	route_cnt	NUMBER(6)		NULL,
+	route_selected	NUMBER(6)		NULL,
+	login_count	NUMBER(6)		NULL,
+	level_nm	NUMBER(6)		NULL,
+	point_nm	NUMBER(6)		NULL,
+	tag_nm	NUMBER(6)		NULL
+);
+
+COMMENT ON COLUMN memberInfo.phone IS '인증';
+
+COMMENT ON COLUMN memberInfo.route_cnt IS '레벨 조건';
+
+COMMENT ON COLUMN memberInfo.route_selected IS '레벨 조건';
+
+COMMENT ON COLUMN memberInfo.login_count IS '레벨 조건';
+
+COMMENT ON COLUMN memberInfo.tag_nm IS '취향';
+
+create sequence account_nm_seq;
